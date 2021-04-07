@@ -19,7 +19,7 @@ public class WorkerResource {
 	@Autowired
 	private WorkerRepository workerRepository;
 	
-	@GetMapping("/")
+	@GetMapping
 	public ResponseEntity<List<Worker>> findAll() {
 		List<Worker> list = workerRepository.findAll();
 		return ResponseEntity.ok(list);
