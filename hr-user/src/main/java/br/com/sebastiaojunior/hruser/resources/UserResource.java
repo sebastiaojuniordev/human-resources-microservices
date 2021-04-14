@@ -27,7 +27,7 @@ public class UserResource {
 	}
 	
 	@GetMapping(value = "/search")
-	public ResponseEntity<User> findById(@RequestParam("email") String email) {
+	public ResponseEntity<User> findByEmail(@RequestParam("email") String email) {
 		User user = userRepository.findByEmail(email);
 		return ResponseEntity.ok(user);
 	}
