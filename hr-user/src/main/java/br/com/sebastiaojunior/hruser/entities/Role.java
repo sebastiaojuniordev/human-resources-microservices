@@ -17,16 +17,16 @@ public class Role implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private String name;
+	private String roleName;
 	
 	public Role() {
 		super();
 	}
 
-	public Role(Long id, String name) {
+	public Role(Long id, String roleName) {
 		super();
 		this.id = id;
-		this.name = name;
+		this.roleName = roleName;
 	}
 
 	public Long getId() {
@@ -37,19 +37,19 @@ public class Role implements Serializable {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getRoleName() {
+		return roleName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setRoleName(String roleName) {
+		this.roleName = roleName;
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((name == null) ? 0 : name.hashCode());
+		result = prime * result + ((roleName == null) ? 0 : roleName.hashCode());
 		return result;
 	}
 
@@ -62,11 +62,12 @@ public class Role implements Serializable {
 		if (getClass() != obj.getClass())
 			return false;
 		Role other = (Role) obj;
-		if (name == null) {
-			if (other.name != null)
+		if (roleName == null) {
+			if (other.roleName != null)
 				return false;
-		} else if (!name.equals(other.name))
+		} else if (!roleName.equals(other.roleName))
 			return false;
 		return true;
 	}
+
 }
